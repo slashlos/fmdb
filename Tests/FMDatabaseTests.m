@@ -1125,7 +1125,7 @@
 }
 
 - (void)testVersionNumber {
-    XCTAssertTrue([FMDatabase FMDBVersion] == 0x0274); // this is going to break everytime we bump it.
+    XCTAssertTrue([FMDatabase FMDBVersion] == 0x0275); // this is going to break everytime we bump it.
 }
 
 - (void)testExecuteStatements {
@@ -1151,12 +1151,24 @@
         XCTAssertEqual(count, 1, @"expected one record for dictionary %@", dictionary);
         return 0;
     }];
+    
+    XCTAssertTrue(success, @"bulk select");
 
+    // select blob type records
+    [self.db executeUpdate:@"create table bulktest4 (id integer primary key autoincrement, b blob);"];
+    NSData *blobData = [[NSData alloc] initWithContentsOfFile:@"/bin/bash"];
+    [self.db executeUpdate:@"insert into bulktest4 (b) values (?)" values:@[blobData] error:nil];
+
+    sql = @"select * from bulktest4";
+    success = [self.db executeStatements:sql withResultBlock:^int(NSDictionary * _Nonnull resultsDictionary) {
+        return 0;
+    }];
     XCTAssertTrue(success, @"bulk select");
 
     sql = @"drop table bulktest1;"
            "drop table bulktest2;"
-           "drop table bulktest3;";
+           "drop table bulktest3;"
+           "drop table bulktest4";
 
     success = [self.db executeStatements:sql];
 
