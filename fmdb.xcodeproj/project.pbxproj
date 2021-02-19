@@ -96,6 +96,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0F91A06025DAF82500978A6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83C73F0A1C326ADA00FFC730;
+			remoteInfo = "FMDB MacOS";
+		};
 		83C73F2D1C326D2000FFC730 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
@@ -129,6 +136,7 @@
 
 /* Begin PBXFileReference section */
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0FB44EBA25067D5F004520CA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CD2426D1FCC09CA00479FDE /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A70AAB03705E1F00C91783 /* fmdb_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fmdb_Prefix.pch; path = src/sample/fmdb_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		4C74070A215083C40003C17E /* FMDatabaseAdditionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditionsTests.m; sourceTree = "<group>"; };
@@ -594,6 +602,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0F91A06125DAF82500978A6C /* PBXTargetDependency */,
 			);
 			name = FMDB;
 			productName = FMDB;
@@ -775,6 +784,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0F91A06125DAF82500978A6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83C73F0A1C326ADA00FFC730 /* FMDB MacOS */;
+			targetProxy = 0F91A06025DAF82500978A6C /* PBXContainerItemProxy */;
+		};
 		83C73F2E1C326D2000FFC730 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 83C73F0A1C326ADA00FFC730 /* FMDB MacOS */;
@@ -788,6 +802,7 @@
 			children = (
 				4C74070F215083C40003C17E /* Base */,
 				4C740719215084250003C17E /* en */,
+				0FB44EBA25067D5F004520CA /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
